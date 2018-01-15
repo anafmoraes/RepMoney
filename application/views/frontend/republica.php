@@ -7,7 +7,11 @@
                               $codigo = $this->session->userdata('userlogado')->codigo;
                               $this->db->where('codigo_rep', $codigo);
                               $query = $this->db->get('republica');
-                                    foreach ($query->result() as $row) {
+                                    foreach ($query->result() as $row) {?>
+
+                                    <h4><?php echo "República ". $row->nome ?></h4>
+
+                                    <?php
 
                                           echo "Endereço: Rua ". $row->rua . ", n°: " . $row->numero;?> <br>
                                           <?php echo "Bairro: ". $row->bairro; ?><br>

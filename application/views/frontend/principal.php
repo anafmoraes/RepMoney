@@ -23,7 +23,7 @@
    		<div class="col-sm">
       		<!--segunda coluna-->
       		<div class="customblock">
-      			<h4 align="center">Datas de vencimento para o mês</h4>
+      			<h4 align="center">Prioridade de pagamento</h4>
       				<table class="table table-striped">
 					  <thead style="background-color:#33cc33;">
 					    <tr>

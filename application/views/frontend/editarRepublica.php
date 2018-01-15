@@ -4,6 +4,10 @@
       <!--primeira coluna-->
       <div class="customblock">
         <form>
+          <?php
+          echo validation_errors('<div class="alert alert-danger">', '</div>');
+          echo form_open('republica/atualizar_dados');
+          ?>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nomeRep">República</label>
@@ -66,6 +70,7 @@
             </div>
           </div>
           <button type="submit" class="btn custombtn">Salvar</button>
+          <?php echo form_close();?>
         </form>
       </div>
     </div>

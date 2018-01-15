@@ -4,7 +4,7 @@ class Republica extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 
-		$this->load->model('usuarios_model', 'modelusuarios');
+		$this->load->model('republica_model', 'modelrepublica');
 		if(!$this->session->userdata('logado')){
 			redirect(base_url('login'));
 		}
@@ -67,5 +67,24 @@ class Republica extends CI_Controller {
 		$this->load->view('frontend/template/menu');
 		$this->load->view('frontend/cadastroRepublica');
 		$this->load->view('frontend/template/footer');
+	}
+
+	public function atualizar_dados(){
+		$this->load->library('form_validation');
+		if($this->form_validation->run() == FALSE){
+			$this->editarRepublica();
+		}else{
+			$nome= $this->input->post('txt-nome');
+			$email= $this->input->post('txt-email');
+			$senha= $this->input->post('txt-senha');
+			$codigo= $this->input->post('txt-codigo');
+			$id = $this->session->userdata('userlogado')->id;
+		
+			if ($this->modelrepublica->atualizar($nome, $email, $codigo, $senha, $id)) {
+					redirect(base_url('principal'));
+				}else{
+					echo "Houve um erro no sistema";
+			}
+		}
 	}
 }
