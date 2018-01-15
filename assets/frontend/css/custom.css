@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.customtitle {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #33cc33;
+}
+
+.customtitle:hover {
+	text-decoration: none;
+	color: #196619;
+}
+
+.customtitle:disabled {
+	text-decoration: none;
+	color: #196619;
+}
+.custominput {
+	margin-right: 4px;
+}
+
+.customblock{
+	padding-right: 10px;
+	padding-top: 10px;
+	margin-top: 40px;
+	margin-right: 10px;
+}
+
+.customfooter {
+	font-size: 12px;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom: 5px;
+	margin: auto;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	position: fixed;
+	background-color: lightgrey;
+}
+
+.custombtn {
+  font-weight: 400;
+  color: #33cc33;
+  background-color: transparent;
+}
+
+.btn.custombtn:hover {
+  color: #196619;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn.custombtn:focus, .custombtn.focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.btn.custombtn:disabled, .custombtn.disabled {
+  color: #33cc33;
+}
+
+
