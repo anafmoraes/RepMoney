@@ -2,12 +2,8 @@
 class Republica extends CI_Controller {
 
 	public function __construct(){
-		parent::__construct();
-
+		parent::__construct();	
 		$this->load->model('republica_model', 'modelrepublica');
-		if(!$this->session->userdata('logado')){
-			redirect(base_url('login'));
-		}
 	}
 
 	public function pag_despesas(){
@@ -74,13 +70,21 @@ class Republica extends CI_Controller {
 		if($this->form_validation->run() == FALSE){
 			$this->editarRepublica();
 		}else{
-			$nome= $this->input->post('txt-nome');
-			$email= $this->input->post('txt-email');
-			$senha= $this->input->post('txt-senha');
-			$codigo= $this->input->post('txt-codigo');
-			$id = $this->session->userdata('userlogado')->id;
-		
-			if ($this->modelrepublica->atualizar($nome, $email, $codigo, $senha, $id)) {
+			$nome= $this->input->post('nomeRep');
+			$rua= $this->input->post('rua');
+			$numero= $this->input->post('numero');
+			$complemento= $this->input->post('complemento');
+			$bairro= $this->input->post('bairro');
+			$cidade= $this->input->post('cidade');
+			$estado= $this->input->post('estado');
+			
+			$codigo = $this->session->userdata('userlogado')->codigo;
+                $this->db->where('codigo_rep', $codigo);
+                $query = $this->db->get('republica');
+                foreach ($query->result() as $row) {
+					$id = $row->id;
+				}
+			if ($this->modelrepublica->atualizar($nome, $rua, $numero, $complemento, $bairro, $cidade, $estado, $id)){
 					redirect(base_url('principal'));
 				}else{
 					echo "Houve um erro no sistema";
@@ -88,3 +92,4 @@ class Republica extends CI_Controller {
 		}
 	}
 }
+?>

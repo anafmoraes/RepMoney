@@ -43,4 +43,10 @@ class Usuarios_model extends CI_Model{
 		$this->db->where('id', $id);
 		return $this->db->update('usuario', $dados);
 	}
+
+	public function remover_rep($id){
+		$dados['codigo']= NULL;
+		$this->db->where('id', $id);
+		return $this->db->update('usuario', $dados);
+	}
 }

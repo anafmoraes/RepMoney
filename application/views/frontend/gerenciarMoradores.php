@@ -18,7 +18,7 @@
       <tr>
         <th scope="row"><?php echo $row->email;?></th>
         <td><?php echo $row->nome;?></td>
-        <td><button type="button" class="btn custombtn">Excluir morador</button></td>
+        <td><a class="btn custombtn" href="<?php echo base_url('usuarios/excluir_morador')?>">Excluir morador</a></td>
       </tr><?php } ?>
     </tbody>
   </table>

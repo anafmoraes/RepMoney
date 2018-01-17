@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Republica extends CI_Model{
+class Republica_model extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();
 
 	}
 
-	public function adicionar($nome, $email, $codigo, $senha){
+	public function função1($nome, $email, $codigo, $senha){
 		$dados['nome']= $nome;
 		$dados['email']= $email;
 		$dados['codigo']= $codigo;
@@ -17,17 +17,23 @@ class Republica extends CI_Model{
 		return $this->db->insert('usuario', $dados);
 	}
 
-	public function excluir($id){
+	public function função2($id){
 		$this->db->where('id', $id);
 		return $this->db->delete('usuario');
 	}
 
-	public function atualizar($nome, $email, $codigo, $senha, $id){
+	public function atualizar($nome, $rua, $numero, $complemento, $bairro, $cidade, $estado, $id){
 		$dados['nome']= $nome;
-		$dados['email']= $email;
-		$dados['codigo']= $codigo;
-		$dados['senha']= $senha;
+		$dados['rua']= $rua;
+		$dados['numero']= $numero;
+		$dados['complemento']= $complemento;
+		$dados['bairro']= $bairro;
+		$dados['cidade']= $cidade;
+		$dados['estado']= "Minas Gerais";
 		$this->db->where('id', $id);
-		return $this->db->update('usuario', $dados);
+
+		echo $nome . $rua . $numero . $complemento . $bairro . $cidade . $estado;
+
+		return $this->db->update('republica', $dados);
 	}
 }

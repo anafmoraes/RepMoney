@@ -133,6 +133,14 @@ class Usuarios extends CI_Controller {
 		}
 	}
 
+	public function excluir_morador($id){
+		if ($this->modelusuarios->remover_rep($id)) {
+			redirect(base_url('republica/moradores'));
+		}else{
+			echo "Houve um erro no sistema!";
+		}
+	}
+
 	public function pag_extrato(){
 		$this->load->view('frontend/template/html-header');
 		$this->load->view('frontend/template/headerUser');

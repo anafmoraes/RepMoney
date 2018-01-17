@@ -3,38 +3,46 @@
     <div class="col-sm">
       <!--primeira coluna-->
       <div class="customblock">
-        <form>
+
+    <form>
           <?php
           echo validation_errors('<div class="alert alert-danger">', '</div>');
           echo form_open('republica/atualizar_dados');
           ?>
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          
+            <div class="form-group">
               <label for="nomeRep">República</label>
-              <input type="text" class="form-control" id="nomeRep" placeholder="Nome da república">
+              <input type="text" class="form-control" name="nomeRep" placeholder="Nome da república">
             </div>
+
+            <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="emailRep">E-mail</label>
-              <input type="email" class="form-control" id="emailRep" placeholder="E-mail do gerenciador">
+              <label for="rua">Rua</label>
+              <input type="text" class="form-control" name="rua" placeholder="Dos loucos">
             </div>
+
+          <div class="form-group col-md-6">
+            <label for="numero">Número</label>
+            <input type="text" class="form-control" name="numero" placeholder="xx">
           </div>
-                
+          </div>
+
           <div class="form-group">
-            <label for="endereco">Endereço</label>
-            <input type="text" class="form-control" id="endereco" placeholder="Rua dos loucos, n 0">
+            <label for="complemento">Complemento</label>
+            <input type="text" class="form-control" name="complemento" placeholder="Complemento">
           </div>
           <div class="form-group">
             <label for="bairro">Bairro</label>
-            <input type="text" class="form-control" id="bairro" placeholder="Barreiro">
+            <input type="text" class="form-control" name="bairro" placeholder="Barreiro">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="cidade">Cidade</label>
-              <input type="text" class="form-control" id="cidade">
+              <input type="text" class="form-control" name="cidade">
             </div>
-            <div class="form-group col-md-4">
+            <!--div class="form-group col-md-4">
               <label for="estado">Estado</label>
-              <select id="estado" class="form-control">
+              <select name="estado" class="form-control">
                 <option selected value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -63,11 +71,7 @@
                 <option value="SE">Sergipe</option>
                 <option value="TO">Tocantins</option>
               </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="cep">CEP</label>
-              <input type="text" class="form-control" id="cep">
-            </div>
+            </div-->
           </div>
           <button type="submit" class="btn custombtn">Salvar</button>
           <?php echo form_close();?>
