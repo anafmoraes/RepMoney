@@ -4,90 +4,67 @@
       <!--primeira coluna-->
       <div class="customblock">
 
-    <form>
           <?php
+          $codigo_rep = $this->session->userdata('userlogado')->codigo;
+          $this->db->where('codigo_rep', $codigo_rep);
+          $query = $this->db->get('republica');
+          foreach ($query->result() as $row) {
+            $nome_rep = $row->nome;
+            $rua = $row->rua;
+            $numero = $row->numero;
+            $complemento = $row->complemento;
+            $bairro = $row->bairro;
+            $cidade = $row->cidade;
+            $estado = $row->estado;
+          }
+
           echo validation_errors('<div class="alert alert-danger">', '</div>');
           echo form_open('republica/atualizar_dados');
           ?>
           
             <div class="form-group">
               <label for="nomeRep">República</label>
-              <input type="text" class="form-control" name="nomeRep" placeholder="Nome da república">
+              <input type="text" class="form-control" name="nomeRep" id="nomeRep" value="<?php echo set_value('nomeRep', $nome_rep); ?>">
             </div>
 
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="rua">Rua</label>
-              <input type="text" class="form-control" name="rua" placeholder="Dos loucos">
+              <input type="text" class="form-control" name="rua" id= "rua" value="<?php echo set_value('rua', $rua); ?>">
             </div>
 
           <div class="form-group col-md-6">
             <label for="numero">Número</label>
-            <input type="text" class="form-control" name="numero" placeholder="xx">
+            <input type="text" class="form-control" name="numero" id="numero" value="<?php echo set_value('numero', $numero); ?>">
           </div>
           </div>
 
           <div class="form-group">
             <label for="complemento">Complemento</label>
-            <input type="text" class="form-control" name="complemento" placeholder="Complemento">
+            <input type="text" class="form-control" name="complemento" id="complemento" value="<?php echo set_value('complemento', $complemento); ?>">
           </div>
           <div class="form-group">
             <label for="bairro">Bairro</label>
-            <input type="text" class="form-control" name="bairro" placeholder="Barreiro">
+            <input type="text" class="form-control" name="bairro" id="bairro" value="<?php echo set_value('bairro', $bairro); ?>">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="cidade">Cidade</label>
-              <input type="text" class="form-control" name="cidade">
+              <input type="text" class="form-control" name="cidade" id="cidade" value="<?php echo set_value('cidade', $cidade); ?>">
             </div>
-            <!--div class="form-group col-md-4">
-              <label for="estado">Estado</label>
-              <select name="estado" class="form-control">
-                <option selected value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-              </select>
-            </div-->
+            <div class="form-group">
+            <label for="bairro">Estado</label>
+            <input type="text" class="form-control" name="estado" id="estado" value="<?php echo set_value('estado', $estado); ?>">
+          </div>
           </div>
           <button type="submit" class="btn custombtn">Salvar</button>
           <?php echo form_close();?>
-        </form>
       </div>
     </div>
     <div class="col-sm">
       <!--segunda coluna-->
           <div class="customblock">
-            <?php
-            $codigo_rep = $this->session->userdata('userlogado')->codigo;
-            $this->db->where('codigo_rep', $codigo_rep);
-                $query = $this->db->get('republica');
-                foreach ($query->result() as $row) {
-                  $nome_rep = $row->nome;
-                }?>
+            
 
             <p> Você é o gerenciador da <?php echo $nome_rep;?>, portando deve certificar-se que todos os dados estão corretos. Atualize as informações da república sempre que necessário. </p>
             <a class="btn custombtn" href="<?php echo base_url('editar_republica')?>">Editar república</a>

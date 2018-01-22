@@ -104,17 +104,22 @@ class Usuarios extends CI_Controller {
 		redirect(base_url('login'));
 	}
 
-	public function pag_recuperarSenha(){
-		$this->load->view('frontend/template/html-header');
-		$this->load->view('frontend/recuperarSenha');
-		$this->load->view('frontend/template/footer');
-	}
-
 	public function recuperarSenha(){
-		$nome = $this->input->post('txt-nome');
-		$email = $this->input->post('txt-email');
-		echo "Olá, ". $nome . ". Sua senha é ". $senha = $this->modelusuarios->recuperar($nome, $email);
+		$nome = $this->input->post('nome');
+		$email = $this->input->post('email');
+		$senha = $this->modelusuarios->recuperar($nome, $email);
+		if($senha != FALSE){
+			$dados['nome'] = $nome;
+			$dados['senha'] = $senha;
+
+			$this->load->view('frontend/template/html-header');
+			$this->load->view('frontend/mostrarSenha', $dados);
+			$this->load->view('frontend/template/footer');
+		}else{
+			redirect(base_url('login'));
+		}
 	}
+		
 
 	public function editar_perfil(){
 		$this->load->view('frontend/template/html-header');

@@ -59,17 +59,14 @@ class Republica extends CI_Controller {
 	}
 	public function cadastrar_republica(){
 		$this->load->view('frontend/template/html-header');
-		$this->load->view('frontend/template/headerUser');
-		$this->load->view('frontend/template/menu');
+		//$this->load->view('frontend/template/headerUser');
+		//$this->load->view('frontend/template/menu');
 		$this->load->view('frontend/cadastroRepublica');
 		$this->load->view('frontend/template/footer');
 	}
 
 	public function atualizar_dados(){
-		$this->load->library('form_validation');
-		if($this->form_validation->run() == FALSE){
-			$this->editarRepublica();
-		}else{
+		
 			$nome= $this->input->post('nomeRep');
 			$rua= $this->input->post('rua');
 			$numero= $this->input->post('numero');
@@ -79,17 +76,16 @@ class Republica extends CI_Controller {
 			$estado= $this->input->post('estado');
 			
 			$codigo = $this->session->userdata('userlogado')->codigo;
-                $this->db->where('codigo_rep', $codigo);
-                $query = $this->db->get('republica');
-                foreach ($query->result() as $row) {
-					$id = $row->id;
-				}
+            $this->db->where('codigo_rep', $codigo);
+            $query = $this->db->get('republica');
+            foreach ($query->result() as $row) {
+				$id = $row->id;
+			}
 			if ($this->modelrepublica->atualizar($nome, $rua, $numero, $complemento, $bairro, $cidade, $estado, $id)){
 					redirect(base_url('principal'));
 				}else{
 					echo "Houve um erro no sistema";
 			}
-		}
 	}
 }
 ?>

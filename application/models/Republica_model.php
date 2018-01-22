@@ -29,11 +29,8 @@ class Republica_model extends CI_Model{
 		$dados['complemento']= $complemento;
 		$dados['bairro']= $bairro;
 		$dados['cidade']= $cidade;
-		$dados['estado']= "Minas Gerais";
+		$dados['estado']= $estado;
 		$this->db->where('id', $id);
-
-		echo $nome . $rua . $numero . $complemento . $bairro . $cidade . $estado;
-
 		return $this->db->update('republica', $dados);
 	}
 }

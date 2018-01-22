@@ -1,7 +1,7 @@
 
 <div class="container">
   <form>
-    <div class="form-row">
+    <!--div class="form-row">
       <div class="form-inline">
         <label for="mes">Selecione o período desejado: &nbsp &nbsp </label>
         <select id="mes" class="form-control">
@@ -21,7 +21,7 @@
         <button type="submit" class="btn custombtn">Ok</button>
       </div> 
     </div>
-  </form>
+  </form-->
   <br/><br/>
   <table class="table table-striped" style="margin-top: 20px;">
     <thead style="background-color:#33cc33;">
@@ -58,7 +58,7 @@
                   <td><?php echo "R$" . $valor_morador;?></td>
                   <td>
                     <button type ="button" class= "btn custombtn" data-toggle="modal" data-target="#modalEditar">editar </button> 
-                    <button type ="button" class= "btn custombtn" data-toggle="modal" data-target="#modalDividir">dividir </button> 
+                    <!--button type ="button" class= "btn custombtn" data-toggle="modal" data-target="#modalDividir">dividir </button--> 
                     <button type ="button" class= "btn custombtn" data-toggle="modal" data-target="#modalExcluir">excluir </button> 
                   </td>
                   <td>
@@ -67,19 +67,10 @@
                 </tr>
 
                 <?php } ?>
-
-
-               
-
-
-
-
     </tbody>
   </table>
 
   <center><button type="button" class="btn custombtn" data-toggle="modal" data-target="#modalCadastrar">Cadastrar nova despesa </button></center>
-
-
 </div>
 
 
@@ -93,35 +84,37 @@
         <h5 class="modal-title" id="exampleModalLabel">Editar despesa</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button>     
       </div>
       <div class="modal-body">
-        <form>
+        <?php  
+        echo validation_errors('<div class="alert alert-danger">','</div>');
+        echo form_open('despesa/editar');
+        ?>
+      <fieldset>
           <div class="form-group">
             <label for="descricao">Descrição</label>
-            <input type="text" class="form-control" id="descricao">
+            <input type="text" class="form-control" name="descricao">
           </div>
           <div class="form-group">
             <label for="valor">Valor</label>
-            <input type="text" class="form-control" id="valor" placeholder="R$00,00">
+            <input type="text" class="form-control" name="valor" placeholder="R$00,00">
           </div>
           <div class="form-group">
             <label for="data">Vencimento:</label>
-            <input type="text" class="form-control" id="data">
-            
+            <input type="text" class="form-control" name="data" placeholder="ano-mes-dia">
           </div>
-          
-        </form>
-
-
+        </fieldset>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn custombtn" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn custombtn">Salvar</button>
+        <button class="btn custombtn"> Salvar </button>
+        <button type="button" class="btn custombtn" data-dismiss="modal">Cancelar</button>
+        <?php echo form_close();?>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- Modal dividir -->
 <div class="modal fade" id="modalDividir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -173,7 +166,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn custombtn" data-dismiss="modal">Cancelar</button>
-        <button type="submit" class="btn custombtn">Excluir</button>
+        <a class="btn custombtn" href="<?php echo base_url('despesa/excluir_despesa/'.$row->id)?>">Excluir</a>
       </div>
     </div>
   </div>

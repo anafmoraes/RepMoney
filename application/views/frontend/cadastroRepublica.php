@@ -69,7 +69,11 @@
         Se estiver tudo certinho, enviaremos para o seu e-mail o <b>CÓDIGO ÚNICO</b> 
         da república. Passe esse código para que os outros moradores tenham acesso.
       </p>
-      <button type="submit" class="btn custombtn">Cadastrar</button>
+      <div class="form-row">
+        <a class="btn custombtn" href="<?php echo base_url('login')?>">Voltar</a>
+        <button type="submit" class="btn custombtn">Cadastrar</button>
+      </div>
+
     </form>
   </div>   
  </div> 

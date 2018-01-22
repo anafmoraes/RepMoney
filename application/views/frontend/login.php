@@ -32,29 +32,25 @@
       </div>
       <div class="modal-body">
         <?php  
-                echo validation_errors('<div class="alert alert-danger">','</div>');
-                echo form_open('usuarios/recuperarSenha');
-            ?>
-          <fieldset>
-
+        echo validation_errors('<div class="alert alert-danger">','</div>');
+        echo form_open('usuarios/recuperarSenha');
+        ?>
+        <fieldset>
           <div class="form-group">
             <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome">
+            <input type="text" class="form-control" name="nome">
           </div>
           <div class="form-group">
             <label for="email">E-mail: </label>
-            <input type="email" class="form-control" id="email">
-            
+            <input type="email" class="form-control" name="email">
           </div>
-          
-       </fieldset>>
-         
+       </fieldset>
       </div>
       <div class="modal-footer">
+        <button class="btn custombtn"> Recuperar senha </button>
         <button type="button" class="btn custombtn" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn custombtn">Recuperar senha</button>
+        <?php echo form_close();?>
       </div>
     </div>
   </div>
 </div>
-<?php echo form_close();?>

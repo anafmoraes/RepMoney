@@ -22,7 +22,7 @@
         	<?php
 					echo validation_errors('<div class="alert alert-danger">', '</div>');
 					echo form_open('usuarios/inserir');
-			?>
+          ?>
 
           <div class="form-group">
             <label for="inputNome">Nome completo</label>

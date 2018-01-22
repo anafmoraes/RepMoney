@@ -3,7 +3,7 @@
 		<div class="col-8">
       		<!--primeira coluna-->
       		<div class="customblock">
-      			 <form>
+      			 <!--form>
             <div class="form-row">
               <div class="form-inline">
               <label for="mes">Selecione o período desejado: &nbsp &nbsp </label>
@@ -24,7 +24,7 @@
                 <button type="submit" class="btn custombtn">Ok</button>
               </div> 
             </div>
-          </form>
+          </form-->
             <br/><br/>
             <table class="table table-striped">
               <thead style="background-color:#33cc33;">
@@ -72,7 +72,7 @@
       		<div class="customblock">
       			<!--p>*** o gerenciador da república ainda não dividiu este valor paratodos os moradores! </p-->
             <p>Você não é o gerenciador da república, por isso não pode editar/excluir/cadastrar despesas. </p>
-            <p>Gerenciador atual da república: <b>@fulaninhors</b></p>
+            <!--p>Gerenciador atual da república: <b>@fulaninhors</b></p-->
       		</div>
       	</div>
     </div>
