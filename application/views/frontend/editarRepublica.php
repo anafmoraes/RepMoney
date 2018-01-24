@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm">
       <!--primeira coluna-->
-      <div class="customblock">
+      <div class="customblock" style="margin-top: -3px">
 
           <?php
           $codigo_rep = $this->session->userdata('userlogado')->codigo;
@@ -57,8 +57,11 @@
             <input type="text" class="form-control" name="estado" id="estado" value="<?php echo set_value('estado', $estado); ?>">
           </div>
           </div>
+          <div style="margin-bottom: 50px">
           <button type="submit" class="btn custombtn">Salvar</button>
           <?php echo form_close();?>
+
+        </div>
       </div>
     </div>
     <div class="col-sm">

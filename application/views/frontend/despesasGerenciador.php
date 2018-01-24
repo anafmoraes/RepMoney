@@ -102,8 +102,21 @@
           </div>
           <div class="form-group">
             <label for="data">Vencimento:</label>
-            <input type="text" class="form-control" name="data" placeholder="ano-mes-dia">
+            <input type="date" class="form-control" name="data">
           </div>
+          <div class="form-check" style="margin-left: 20px">
+            <input class="form-check-input" type="checkbox" value="" id="paga">
+            <label class="form-check-label" for="paga">
+                Marcar como paga
+            </label>
+          </div>
+          <div class="form-check" style="margin-left: 20px">
+            <input class="form-check-input" type="checkbox" value="" id="fixa">
+            <label class="form-check-label" for="fixa">
+                Marcar como fixa
+            </label>
+          </div>
+
         </fieldset>
       </div>
       <div class="modal-footer">
@@ -156,7 +169,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar despesa</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Excluir despesa</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -195,8 +208,15 @@
           </div>
           <div class="form-group">
             <label for="data">Vencimento:</label>
-            <input type="text" class="form-control" id="data">
+            <input type="date" class="form-control" id="data">
             
+          </div>
+
+          <div class="form-check" style="margin-left: 20px">
+            <input class="form-check-input" type="checkbox" value="" id="fixa">
+            <label class="form-check-label" for="fixa">
+                Marcar como conta fixa
+            </label>
           </div>
           
         </form>       

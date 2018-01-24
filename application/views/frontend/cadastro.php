@@ -40,10 +40,17 @@
             <label for="txt-codigo">A sua república já foi cadastrada? Se sim, insira o CÓDIGO ÚNICO no campo abaixo</label>
             <input type="text" class="form-control" id="txt-codigo" name="txt-codigo" placeholder="CÓDIGO ÚNICO">
           </div>
+
+          <div class="form-check" style="margin-left: 20px">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Sou gerenciador da república
+            </label>
+          </div>
           <button type="submit" class="btn custombtn">Salvar</button>
-          <p>Sua república ainda não foi cadastrada?
-      		<a href="<?php echo base_url('cadastrar_republica')?>" class="btn custombtn">Cadastre sua república agora</a></p>
-          <br/><br/><br/>
+          <!--<p>Sua república ainda não foi cadastrada?
+      		<a href="<?php echo base_url('cadastrar_republica')?>" class="btn custombtn" style="margin-bottom: 20px">Cadastre sua república agora</a></p>
+          <br/><br/><br/> -->
 		  <?php echo form_close();?>
       </div>
     </div>
