@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Oi</title>
+	<title>Plataforma Joker</title>
 </head>
 <body>
 
