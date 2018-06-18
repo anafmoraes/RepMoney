@@ -49,20 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'home';
+$route['default_controller'] = 'Autenticacao';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['logout'] = 'usuarios/logout';
-$route['login'] = 'usuarios/pag_login';
-$route['editar'] = 'usuarios/editar_perfil';
-$route['editar_republica'] = 'republica/editar_republica';
-$route['excluir_republica'] = 'republica/excluir_republica';
-$route['excluir'] = 'usuarios/excluir_perfil';
-$route['extrato'] = 'usuarios/pag_extrato';
-$route['despesas'] = 'republica/pag_despesas';
-$route['republica'] = 'republica/dados_republica';
-$route['republica_admin'] = 'republica/admin_republica';
-$route['gerenciar_moradores'] = 'republica/moradores';
-$route['despesas_admin'] = 'republica/admin_despesas';
-$route['mostrar_senha'] = 'usuarios/mostrar_senha';
-$route['cadastrar_republica'] = 'republica/cadastrar_republica';
